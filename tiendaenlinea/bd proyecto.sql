@@ -68,17 +68,6 @@ create table articulo (
 	estado bit not null
 	);
 
-
--- agrregado 
-
-create table VentaDetalleIngreso(
-	IDvdingreso int identity (1,1) primary key,
-	IDarticulo int not null,
-	IDventa int not null,
-	IDingreso int not null,
-	canatidad int not null
-);
-
 create table Usuarios(
 	ID_Usuario int primary key identity(1, 1),	
     ID_Empleado int not null,
