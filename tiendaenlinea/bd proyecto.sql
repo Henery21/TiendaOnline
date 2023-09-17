@@ -1,135 +1,273 @@
--- base de datos proyecto 
-create database Tiendalacteos;
+create database TiendaLacteos;
 go
-use TiendaLacteos;
+USE TiendaLacteos;
+GO
 
-create table categoria  (
-    IDcategoria int identity(1,1)primary key,
-	nombre varchar(50) not null, 
-	descripcion varchar(255) not null,
-	estado bit not null, 
-	);
-
-
-create table ingreso (
-	IDingreso int identity (1,1) primary key,
-	IDProveedor  int not null,
-	IDusuario int not null,
-	Tipo_comprobante varchar (20)not null,
-	Serie_comprbante  varchar (7)not null,
-	Num_comprobante varchar (10)not null,
-	Fecha datetime not null,
-	imppuesto decimal(4,2)not null,
-	Total decimal (11,2)not null,
-	Estado varchar(20)not null,
-); 
+CREATE TABLE articulo(
+	IDarticulo int IDENTITY(1,1)PRIMARY KEY ,
+	IDcategoria int NOT NULL,
+	codigo varchar(50) NOT NULL,
+	Precioventa decimal(11, 2) NOT NULL,
+	stock int NOT NULL,
+	descripcion varchar(255) NOT NULL,
+	imagen varchar(20) NOT NULL,
+	estado bit NOT NULL, 
+)
 
 
-create table venta (
-	IDventa int identity (1,1) primary key,
-	IDcliente int not null,
-	IDusuario int not null,
-	Tipo_comprobante varchar (20)not null,
-	Serie_comprobante  varchar (7)not null,
-	Num_comprobante varchar (10)not null,
-	Fecha datetime not null,
-	impuesto decimal(4,2)not null,
-	Total decimal (11,2)not null,
-	Estado varchar(20)not null
-);
-
-create table DetalleVenta(
-	IDdetalleventa int identity (1,1) primary key,
-	IDventa int not null,
-	IDarticulo int not null,
-	cantidad int not null,
-	Precio decimal(11,2),
-	descuento decimal (11,2)
+CREATE TABLE AsignacionRolesOpciones(
+	ID_AsignacionRol int IDENTITY(1,1)PRIMARY KEY,
+	ID_Rol int NOT NULL,
+	ID_Opcion int NOT NULL
 );
 
 
-create table DetalleIngreso (
-	IDdestalleingreso int identity(1,1) primary key, 
-	IDingreso int not null,
-	IDarticulo int not null,
-	cantidad int not null,
-	Precio decimal (11,2)
+CREATE TABLE categoria(
+	IDcategoria int IDENTITY(1,1) PRIMARY KEY ,
+	nombre varchar(50) NOT NULL,
+	descripcion varchar(255) NOT NULL,
+	estado bit NOT NULL
+
 );
 
 
-create table articulo (
-	IDarticulo int identity(1,1)primary key,
-	IDcategoria int not null,
-	codigo varchar (50) not null,
-	Precioventa decimal (11,2) not null,
-	stock int not null,
-	descripcion varchar(255) not null,
-	imagen varchar (20) not null,
-	estado bit not null
-	);
+CREATE TABLE Cliente(
+	ID_Cliente int IDENTITY(1,1) PRIMARY KEY,
+	NombresCliente nvarchar(60) NOT NULL,
+	ApellidosCliente nvarchar(60) NOT NULL,
+	TelefonoCliente nvarchar(10) NOT NULL,
+	EmailCliente nvarchar(60) NOT NULL,
+	ID_Direccion int NOT NULL,
+	IDusuario int NOT NULL
 
-create table Usuarios(
-	ID_Usuario int primary key identity(1, 1),	
-    ID_Empleado int not null,
-	ID_Rol int not null,
-    Usuario varchar(60) not null,
-    Clave varchar(60) not null,
 );
 
-create table Roles(
-	ID_Rol int primary key identity(1, 1),
-    NombreRol varchar(60) not null
+
+CREATE TABLE DetalleIngreso(
+	IDdestalleingreso int IDENTITY(1,1) PRIMARY KEY,
+	IDingreso int NOT NULL,
+	IDcategoria int NOT NULL,
+	cantidad int NOT NULL,
+	Precio decimal(11, 2) NULL,
+) ;
+
+
+CREATE TABLE DetalleVenta(
+	IDdetalleventa int IDENTITY(1,1) PRIMARY KEY,
+	IDventa int NOT NULL,
+	IDarticulo int NOT NULL,
+	cantidad int NOT NULL,
+	Precio decimal(11, 2) NULL,
+
 );
 
-create table Opciones(
-	ID_Opcion int primary key identity(1, 1),
-    NombreOpcion varchar(60) not null
+
+CREATE TABLE Direcciones(
+	ID_Direccion int IDENTITY(1,1)PRIMARY KEY,
+	NumeroCasa nvarchar(10) NULL,
+	PasajePoligono nvarchar(10) NULL,
+	Calle nvarchar(45) NULL,
+	Colonia nvarchar(45) NULL,
+	Canton nvarchar(45) NULL,
+	Caserio nvarchar(45) NULL,
+	Municipio nvarchar(45) NOT NULL,
+	Departamento nvarchar(45) NOT NULL,
+	CodigoPostal char(5) NULL,
+	Pais nvarchar(45) NOT NULL,
 );
 
-create table AsignacionRolesOpciones(
-	ID_AsignacionRol int primary key identity(1, 1),
-    ID_Rol int not null,
-    ID_Opcion int not null
-);
-create table Empleados(
-	ID_Empleado int primary key identity(1, 1),
-    DUI_Empleado varchar(10) not null,
-    ISSS_Empleado int not null,
-    NombresEmpleado varchar(100) not null,
-    ApellidosEmpleado varchar(100) not null,
-    FechaNacEmpleado date not null,
-    Telefono varchar(10) not null,
-    Correo varchar(100),
-    ID_Cargo int not null,
-    ID_Direccion int not null   
-);
-CREATE TABLE Direcciones (
-  ID_Direccion INT PRIMARY KEY IDENTITY(1,1),
-  NumeroCasa NVARCHAR(10),
-  PasajePoligono NVARCHAR(10),
-  Calle NVARCHAR(45),
-  Colonia NVARCHAR(45),
-  Canton NVARCHAR(45),
-  Caserio NVARCHAR(45),
-  Municipio NVARCHAR(45) NOT NULL,
-  Departamento NVARCHAR(45) NOT NULL,
-  CodigoPostal CHAR(5),
-  Pais NVARCHAR(45) NOT NULL,
-);
-CREATE TABLE Cliente (
-  ID_Cliente INT PRIMARY KEY IDENTITY(1,1),
-  NombresCliente NVARCHAR(60) NOT NULL,
-  ApellidosCliente NVARCHAR(60) NOT NULL,
-  TelefonoCliente NVARCHAR(10) NOT NULL,
-  EmailCliente NVARCHAR(60) NOT NULL,
-  ID_Direccion INT NOT NULL,
-  ID_ROL int not null
+
+CREATE TABLE Empleados(
+	ID_Empleado int IDENTITY(1,1)PRIMARY KEY,
+	DUI_Empleado varchar(10) NOT NULL,
+	ISSS_Empleado int NOT NULL,
+	NombresEmplead varchar(100) NOT NULL,
+	ApellidosEmpleado varchar (100) NOT NULL,
+	FechaNacEmpleado date NOT NULL,
+	Telefono varchar(10) NOT NULL,
+	Correo varchar(100) NULL,
+	ID_Cargo int NOT NULL,
+	ID_Direccion int NOT NULL,
+
 );
 
-create table MetodoPAgo(
- IDmetodoPAgo int identity(1,1) primary key, 
- efectivo int,
- tarjeta int,
- bitcoin int,
- IDventa int
+
+CREATE TABLE ingreso(
+	IDingreso int IDENTITY(1,1)PRIMARY KEY,
+	IDempleado int NOT NULL,
+	Tipo_comprobante varchar(20) NOT NULL,
+	Serie_comprbante varchar(7) NOT NULL,
+	Num_comprobante varchar(10) NOT NULL,
+	Fecha datetime NOT NULL,
+	impuesto decimal(4, 2) NOT NULL,
+	Total decimal(11, 2) NOT NULL,
+	Estado varchar(20) NOT NULL,
+ 
 );
+
+CREATE TABLE MetodoPAgo(
+	IDmetodoPAgo int IDENTITY(1,1)PRIMARY KEY,
+	efectivo int NULL,
+	tarjeta int NULL,
+	bitcoin int NULL,
+	IDventa int NULL,
+	IDcliente int NULL,
+
+) ;
+
+
+CREATE TABLE Opciones(
+	ID_Opcion int IDENTITY(1,1) PRIMARY KEY,
+	NombreOpcion varchar(60) NOT NULL,
+
+) ;
+
+CREATE TABLE Roles(
+	ID_Rol int IDENTITY(1,1)PRIMARY KEY,
+	NombreRol varchar(60) NOT NULL,
+
+) ;
+
+
+CREATE TABLE Usuarios(
+	ID_Usuario int IDENTITY(1,1)PRIMARY KEY,
+	ID_Empleado int NOT NULL,
+	ID_Rol int NOT NULL,
+	Usuario varchar(60) NOT NULL,
+	Clave varchar(60) NOT NULL,
+
+);
+
+
+CREATE TABLE venta(
+	IDventa int IDENTITY(1,1) PRIMARY KEY,
+	IDepleado int NOT NULL,
+	Tipo_comprobante varchar(20) NOT NULL,
+	Serie_comprobante varchar(7) NOT NULL,
+	Num_comprobante varchar(10) NOT NULL,
+	Fecha datetime NOT NULL,
+	impuesto decimal(4, 2) NOT NULL,
+	Total decimal(11, 2) NOT NULL,
+	Estado varchar(20) NOT NULL,
+);
+-- Llaves Foráneas para la tabla [articulo]
+ALTER TABLE articulo  
+ADD CONSTRAINT articulo_categoria FOREIGN KEY(IDcategoria)
+REFERENCES categoria (IDcategoria);
+
+ALTER TABLE articulo 
+CHECK CONSTRAINT articulo_categoria;
+
+-- Llaves Foráneas para la tabla [AsignacionRolesOpciones]
+ALTER TABLE  AsignacionRolesOpciones
+ADD CONSTRAINT AsignacionRolesOpciones_Opciones FOREIGN KEY(ID_Opcion)
+REFERENCES Opciones (ID_Opcion)
+
+ALTER TABLE AsignacionRolesOpciones 
+CHECK CONSTRAINT AsignacionRolesOpciones_Opciones
+
+ALTER TABLE AsignacionRolesOpciones  
+ADD CONSTRAINT AsignacionRolesOpciones_Roles FOREIGN KEY(ID_Rol)
+REFERENCES Roles (ID_Rol)
+
+ALTER TABLE  AsignacionRolesOpciones 
+CHECK CONSTRAINT AsignacionRolesOpciones_Roles
+
+-- Llaves Foráneas para la tabla [Cliente]
+ALTER TABLE Cliente 
+ADD CONSTRAINT Cliente_Direcciones FOREIGN KEY(ID_Direccion)
+REFERENCES Direcciones (ID_Direccion)
+
+ALTER TABLE Cliente
+CHECK CONSTRAINT Cliente_Direcciones
+
+ALTER TABLE Cliente  
+ADD CONSTRAINT Cliente_Usuarios FOREIGN KEY(IDusuario)
+REFERENCES Usuarios (ID_Usuario)
+
+ALTER TABLE Cliente 
+CHECK CONSTRAINT Cliente_Usuarios
+
+-- Llaves Foráneas para la tabla [DetalleIngreso]
+ALTER TABLE DetalleIngreso
+ADD CONSTRAINT DetalleIngreso_categoria FOREIGN KEY(IDcategoria)
+REFERENCES categoria (IDcategoria)
+
+ALTER TABLE DetalleIngreso
+CHECK CONSTRAINT DetalleIngreso_categoria
+
+ALTER TABLE DetalleIngreso  
+ADD CONSTRAINT DetalleIngreso_ingreso FOREIGN KEY(IDingreso)
+REFERENCES ingreso (IDingreso)
+
+ALTER TABLE DetalleIngreso 
+CHECK CONSTRAINT DetalleIngreso_ingreso
+
+-- Llaves Foráneas para la tabla [DetalleVenta]
+ALTER TABLE DetalleVenta 
+ADD CONSTRAINT DetalleVenta_articulo FOREIGN KEY(IDarticulo)
+REFERENCES articulo (IDarticulo)
+
+ALTER TABLE DetalleVenta 
+CHECK CONSTRAINT DetalleVenta_articulo
+
+ALTER TABLE DetalleVenta  
+ADD CONSTRAINT DetalleVenta_venta FOREIGN KEY(IDventa)
+REFERENCES venta (IDventa)
+
+ALTER TABLE DetalleVenta 
+CHECK CONSTRAINT DetalleVenta_venta
+
+-- Llaves Foráneas para la tabla [Empleados]
+ALTER TABLE Empleados  
+ADD CONSTRAINT Empleados_Direcciones FOREIGN KEY(ID_Direccion)
+REFERENCES Direcciones (ID_Direccion)
+
+ALTER TABLE Empleados 
+CHECK CONSTRAINT Empleados_Direcciones
+
+-- Llaves Foráneas para la tabla [ingreso]
+ALTER TABLE ingreso  
+ADD CONSTRAINT ingreso_Empleados FOREIGN KEY(IDempleado)
+REFERENCES Empleados (ID_Empleado)
+
+ALTER TABLE ingreso 
+CHECK CONSTRAINT ingreso_Empleados
+
+-- Llaves Foráneas para la tabla [MetodoPAgo]
+ALTER TABLE MetodoPAgo  
+ADD CONSTRAINT MetodoPAgo_Cliente FOREIGN KEY(IDcliente)
+REFERENCES Cliente (ID_Cliente)
+
+ALTER TABLE MetodoPAgo
+CHECK CONSTRAINT MetodoPAgo_Cliente
+
+ALTER TABLE MetodoPAgo
+ADD CONSTRAINT MetodoPAgo_venta FOREIGN KEY(IDventa)
+REFERENCES venta (IDventa)
+
+ALTER TABLE MetodoPAgo 
+CHECK CONSTRAINT MetodoPAgo_venta
+
+-- Llaves Foráneas para la tabla [Usuarios]
+ALTER TABLE Usuarios 
+ADD CONSTRAINT Usuarios_Empleados FOREIGN KEY(ID_Empleado)
+REFERENCES Empleados (ID_Empleado)
+
+ALTER TABLE Usuarios 
+CHECK CONSTRAINT Usuarios_Empleados
+
+ALTER TABLE Usuarios 
+ADD CONSTRAINT Usuarios_Roles FOREIGN KEY(ID_Rol)
+REFERENCES Roles (ID_Rol)
+
+ALTER TABLE Usuarios
+CHECK CONSTRAINT Usuarios_Roles
+
+-- Llaves Foráneas para la tabla [venta]
+ALTER TABLE venta  
+ADD CONSTRAINT venta_Empleados FOREIGN KEY(IDepleado)
+REFERENCES Empleados (ID_Empleado)
+
+ALTER TABLE venta 
+CHECK CONSTRAINT venta_Empleados
