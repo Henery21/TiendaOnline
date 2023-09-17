@@ -1,7 +1,7 @@
 -- base de datos proyecto 
 create database Tiendalacteos;
 go
-use TiendaLacteos;
+use TiendaLacteos;ihij
 
 
 create table categoria  (
