@@ -1,4 +1,4 @@
-gooool-- base de datos proyecto 
+-- base de datos proyecto 
 create database Tiendalacteos;
 go
 use TiendaLacteos;
