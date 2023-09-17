@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de Lácteos en Línea</title>
+    <style>
+        /* Estilos para la barra de navegación */
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #7BC765;
+        }
+
+        li {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li a:hover {
+            background-color: #7BC765;
+        }
+
+        /* Estilos para los productos */
+        .product {
+            width: 300px;
+            height: 300px;
+            background-color: #f2f2f2;
+            border: 2px solid #ddd;
+            text-align: center;
+            margin: 20px;
+            float: left;
+            padding: 15px;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .product img {
+            max-width: 100px;
+            max-height: 100px;
+        }
+
+        /* Estilos para el botón "Agregar al carrito" */
+        .add-to-cart {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a href="#home">Inicio</a></li>
+        <li><a href="#products">Productos</a></li>
+        <li><a href="#cart">Carrito</a></li>
+    </ul>
+
+    <h1>Bienvenido a la Tienda de Lácteos en Línea</h1>
+
+    <div id="products">
+        <h2>Nuestros Productos</h2>
+        <div class="product">
+            <img src="URL_de_la_imagen1.jpg" alt="Leche Entera Orgánica">
+            <h3>Leche Entera Orgánica</h3>
+            <p>Descripción: Leche fresca y natural de vacas criadas en entornos orgánicos. Rica en nutrientes esenciales.</p>
+            <p>Precio: $2.99 por litro</p>
+            <button class="add-to-cart">Agregar al Carrito</button>
+        </div>
+
+        <div class="product">
+            <img src="URL_de_la_imagen2.jpg" alt="Yogur Griego Natural">
+            <h3>Yogur Griego Natural</h3>
+            <p>Descripción: Yogur espeso y cremoso, perfecto para el desayuno o como refrigerio. Sin azúcar añadido.</p>
+            <p>Precio: $1.49 por envase de 200g</p>
+            <button class="add-to-cart">Agregar al Carrito</button>
+        </div>
+
+        <div class="product">
+            <img src="URL_de_la_imagen3.jpg" alt="Queso Cheddar Añejo">
+            <h3>Queso Cheddar Añejo</h3>
+            <p>Descripción: Queso cheddar envejecido durante meses para un sabor robusto y delicioso. Ideal para sándwiches y aperitivos.</p>
+            <p>Precio: $4.99 por bloque de 250g</p>
+            <button class="add-to-cart">Agregar al Carrito</button>
+        </div>
+    </div>
+
+    <div id="cart">
+        <h2></h2>
+        <!-- Aquí se mostrarán los productos agregados al carrito -->
+    </div>
+
+    <script>
+        // Función para agregar productos al carrito
+        const addToCartButtons = document.querySelectorAll('.add-to-cart');
+        const cart = document.getElementById('cart');
+
+        addToCartButtons.forEach((button) => {
+            button.addEventListener('click', () => {
+                const product = button.parentElement;
+                const productName = product.querySelector('h3').textContent;
+                const productPrice = product.querySelector('p:last-child').textContent;
+
+                const cartItem = document.createElement('div');
+                cartItem.textContent = `${productName} - ${productPrice}`;
+                cart.appendChild(cartItem);
+            });
+        });
+    </script>
+</body>
+</html>
