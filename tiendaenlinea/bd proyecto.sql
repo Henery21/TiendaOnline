@@ -1,8 +1,7 @@
 -- base de datos proyecto 
 create database Tiendalacteos;
 go
-use TiendaLacteos;ihij
-
+use TiendaLacteos;
 
 create table categoria  (
     IDcategoria int identity(1,1)primary key,
