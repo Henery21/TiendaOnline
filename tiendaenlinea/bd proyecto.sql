@@ -78,23 +78,6 @@ create table VentaDetalleIngreso(
 	IDingreso int not null,
 	canatidad int not null
 );
-Create table Factura(
-	IDFactura int identity(1,1) primary key,
-	IDventa int not null,
-	IDcliente int not null,
-	NumFactura varchar (50)not null,
-	FechaEmicion datetime not null,
-	MontoTotal decimal (11,2)not null
-);
-create table Caja(
-	IDcaja int  identity (1,1) primary key,
-	empleado varchar (50) not null,
-	fecha  datetime not null,
-	IDfactura int not null,
-	Montoinicial decimal (11,2) not null,
-	MontoFinal decimal (11,2)not null,
-	detalles varchar (max)
-);
 
 create table Usuarios(
 	ID_Usuario int primary key identity(1, 1),	
