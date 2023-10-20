@@ -15,9 +15,10 @@ public class crlProveedor extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         daoProveedor dProveedor = new daoProveedor();
-        ArrayList<proveedores> Lista = dProveedor.consultarProveedores();
+        ArrayList<proveedores> Lista = dProveedor.consultarProveedor(LEGACY_DO_HEAD);
         request.setAttribute("Lista", Lista);
-        request.getRequestDispatcher("empleados/consultaE.jsp").forward(request, response);
+        request.getRequestDispatcher("empleados/consultaE.jsp").forward(request, response);//Agregar Direccion donde se encuentre el jsp 
+        
 
     }
 }

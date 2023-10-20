@@ -15,10 +15,9 @@ public class crlEmpleado extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, SQLException {
-        daoEmpleado dEstudiante = new daoEmpleado();
-        ArrayList<empleado> Lista = dEstudiante.consultarEstudiantes();
-        request.setAttribute("Lista", Lista);
-        request.getRequestDispatcher("empleados/consulta.jsp").forward(request, response);
+        daoEmpleado dEmpleado = new daoEmpleado();
+        ArrayList<empleado> Lista = dEmpleado.consultarEmpleado(LEGACY_DO_HEAD);
+        request.getRequestDispatcher("jsp/consulta.jsp").forward(request, response);
 
     }
 }
