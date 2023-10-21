@@ -156,6 +156,129 @@ create table DetalleIngreso(
 	Cantidad int NOT NULL,
 	Precio decimal(11, 2) NULL,
 ) ;
+-- AUDITORÍA Y REGISTRO DE ACTIVIDADES
+create table Auditoria(
+    ID_Auditoria int identity(1,1) primary key,
+    Fecha datetime not null,
+    Usuario varchar(60) not null,
+    Accion varchar(100) not null,
+    Detalles nvarchar(max) not null
+);
+
+-- PROVEEDORES
+create table Proveedores(
+    ID_Proveedor int identity(1,1) primary key,
+    Nombre varchar(100) not null,
+    Direccion varchar(255),
+    Telefono varchar(20),
+    Correo varchar(100),
+    Notas nvarchar(max)
+);
+
+-- ALMACÉN O INVENTARIO
+create table Inventario(
+    ID_Inventario int identity(1,1) primary key,
+    ID_Articulo int not null,
+    Cantidad int not null,
+    Ubicacion varchar(50),
+    Notas nvarchar(max)
+);
+
+-- CARRITO DE COMPRAS
+create table CarritoCompras(
+    ID_Carrito int identity(1,1) primary key,
+    ID_Cliente int not null,
+    Fecha datetime not null
+);
+
+create table DetalleCarrito(
+    ID_DetalleCarrito int identity(1,1) primary key,
+    ID_Carrito int not null,
+    ID_Articulo int not null,
+    Cantidad int not null,
+    Precio decimal(11, 2) not null
+);
+
+-- ENVÍOS Y LOGÍSTICA
+create table Envios(
+    ID_Envio int identity(1,1) primary key,
+    ID_Pedido int not null,
+    FechaEnvio datetime not null,
+    Estado varchar(50) not null,
+    MetodoEnvio varchar(100),
+    Notas nvarchar(max)
+);
+
+-- VALORACIÓN DE PRODUCTOS
+create table Valoraciones(
+    ID_Valoracion int identity(1,1) primary key,
+    ID_Articulo int not null,
+    ID_Cliente int not null,
+    Puntuacion int not null,
+    Comentario nvarchar(max),
+    Fecha datetime not null
+);
+
+-- INFORMACIÓN FINANCIERA
+create table TransaccionesFinancieras(
+    ID_Transaccion int identity(1,1) primary key,
+    FechaTransaccion datetime not null,
+    TipoTransaccion varchar(50) not null,
+    Monto decimal(11, 2) not null,
+    Descripcion nvarchar(max),
+    ID_CuentaBancaria int not null
+);
+
+-- REPORTES Y ANÁLISIS
+create table Reportes(
+    ID_Reporte int identity(1,1) primary key,
+    NombreReporte varchar(100) not null,
+    FechaCreacion datetime not null,
+    Autor varchar(60) not null,
+    Descripcion nvarchar(max),
+    ArchivoReporte varchar(100)
+);
+
+-- RECURSOS HUMANOS
+create table Vacaciones(
+    ID_Vacacion int identity(1,1) primary key,
+    ID_Empleado int not null,
+    FechaInicio datetime not null,
+    FechaFin datetime not null,
+    Aprobada bit not null
+);
+
+-- CLIENTES EMPRESARIALES
+create table Empresas(
+    ID_Empresa int identity(1,1) primary key,
+    NombreEmpresa varchar(100) not null,
+    NIT varchar(15) not null,
+    Direccion varchar(255),
+    Telefono varchar(20),
+    Correo varchar(100),
+    Notas nvarchar(max)
+);
+
+-- GESTIÓN DE PRECIOS Y DESCUENTOS
+create table Precios(
+    ID_Precio int identity(1,1) primary key,
+    ID_Articulo int not null,
+    PrecioVenta decimal(11, 2) not null,
+    FechaInicio datetime not null,
+    FechaFin datetime not null,
+    Notas nvarchar(max)
+);
+
+-- SISTEMA DE RESERVAS
+create table Reservas(
+    ID_Reserva int identity(1,1) primary key,
+    ID_Cliente int not null,
+    FechaInicio datetime not null,
+    FechaFin datetime not null,
+    Estado varchar(50) not null,
+    Notas nvarchar(max)
+);
+
 
 ALTER TABLE Municipios ADD FOREIGN KEY (ID_Departamento) REFERENCES Departamentos(ID_Departamento);
 ALTER TABLE Distritos ADD FOREIGN KEY (ID_Municipio) REFERENCES Municipios(ID_Municipio);
