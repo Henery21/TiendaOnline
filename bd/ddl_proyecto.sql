@@ -58,6 +58,23 @@ create table Clientes(
 	ID_Direccion int
 );
 
+create table LoginClientes(
+    ID_LoginCliente int primary key identity(1, 1),
+    ID_Cliente int not null,
+    Usuario varchar(60) not null,
+    Clave varchar(60) not null,
+    foreign key(ID_Cliente) references Clientes(ID_Cliente)
+);
+
+CREATE TABLE AuditoriaLogins (
+    ID_Auditoria int IDENTITY(1, 1) PRIMARY KEY,
+    ID_LoginCliente int,
+    FechaLogin datetime,
+    HostCliente nvarchar(100),
+    Exito bit,
+	foreign key (ID_LoginCliente) references LoginClientes (ID_LoginCliente)
+);
+
 -- MANEJO DE ROLES
 create table Opciones(
 	ID_Opcion int primary key identity(1, 1),

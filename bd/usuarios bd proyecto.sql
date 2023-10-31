@@ -95,3 +95,19 @@ select name from sys.database_principals where type_desc = 'SQL_USER';
 go
 -- Consulta para obtener una lista de roles en la instancia de SQL Server
 select name from sys.database_principals where type_desc = 'DATABASE_ROLE';
+
+-- trigger para el login
+CREATE TRIGGER Trigger_LoginCliente_Logon
+ON LoginClientes
+AFTER INSERT
+AS
+BEGIN
+    -- Insertar un registro de auditoría con información del inicio de sesión
+    INSERT INTO AuditoriaLogins (ID_LoginCliente, FechaLogin, HostCliente, Exito)
+    SELECT
+        inserted.ID_LoginCliente,
+        GETDATE(), -- Fecha y hora actual
+        HOST_NAME(), -- Nombre del host del cliente
+        1 -- Éxito del inicio de sesión (puedes ajustarlo según tus necesidades)
+    FROM inserted;
+END;
