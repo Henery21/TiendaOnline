@@ -1,26 +1,25 @@
 package com.project.entidades;
 
 public class Usuario {
-    private int idusuario;
+
+    private int ID_Usuario;
     private String usuario;
     private String clave;
-    private Rol rol;
+    private int ID_Rol;
 
-    public Usuario() {
-    }
-
-    public Usuario(String usuario, String clave,Rol rol) {
+    public Usuario(int ID_Usuario, String usuario, String clave, int ID_Rol) {
+        this.ID_Usuario = ID_Usuario;
         this.usuario = usuario;
         this.clave = clave;
-        this.rol = rol;
+        this.ID_Rol = ID_Rol;
+    }    
+
+    public int getID_Usuario() {
+        return ID_Usuario;
     }
 
-    public int getIdusuario() {
-        return idusuario;
-    }
-
-    public void setIdusuario(int idusuario) {
-        this.idusuario = idusuario;
+    public void setID_Usuario(int ID_Usuario) {
+        this.ID_Usuario = ID_Usuario;
     }
 
     public String getUsuario() {
@@ -39,12 +38,11 @@ public class Usuario {
         this.clave = clave;
     }
 
-    public Rol getRol() {
-        return rol;
+    public int getID_Rol() {
+        return ID_Rol;
     }
 
-    public void setRol(Rol rol) {
-        this.rol = rol;
+    public void setID_Rol(int ID_Rol) {
+        this.ID_Rol = ID_Rol;
     }
-    
 }

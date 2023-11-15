@@ -1,26 +1,13 @@
 package com.project.entidades;
 
 public class Rol {
-    private int idrol;
-    private String rol;
+
+    public Rol(int ID_Rol, String nombreRol) {
+        this.ID_Rol = ID_Rol;
+        this.nombreRol = nombreRol;
+    }
+    private int ID_Rol;
+    private String nombreRol;
     
-    public Rol(int idrol, String rol) {
-        this.idrol = idrol;
-        this.rol = rol;
-    }
     
-    public Rol() {
-    }
-    public int getIdrol() {
-        return idrol;
-    }
-    public void setIdrol(int idrol) {
-        this.idrol = idrol;
-    }
-    public String getRol() {
-        return rol;
-    }
-    public void setRol(String rol) {
-        this.rol = rol;
-    }
 }

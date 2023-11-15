@@ -1,15 +1,64 @@
-C:\Users\Alvaro\Documents\NetBeansProjects\ds1_2023\API_REST_Project\src\main\java\com\project\procesos\daoUsuario.java
-C:\Users\Alvaro\Documents\NetBeansProjects\ds1_2023\API_REST_Project\src\main\java\com\project\utilerias\JSONWebToken.java
-C:\Users\Alvaro\Documents\NetBeansProjects\ds1_2023\API_REST_Project\src\main\java\com\project\utilerias\Secured.java
-C:\Users\Alvaro\Documents\NetBeansProjects\ds1_2023\API_REST_Project\src\main\java\com\project\utilerias\Hash.java
-C:\Users\Alvaro\Documents\NetBeansProjects\ds1_2023\API_REST_Project\src\main\java\com\project\JakartaRestConfiguration.java
-C:\Users\Alvaro\Documents\NetBeansProjects\ds1_2023\API_REST_Project\src\main\java\com\project\utilerias\AuthenticationFilter.java
-C:\Users\Alvaro\Documents\NetBeansProjects\ds1_2023\API_REST_Project\src\main\java\com\project\entidades\Usuario.java
-C:\Users\Alvaro\Documents\NetBeansProjects\ds1_2023\API_REST_Project\src\main\java\com\project\procesos\daoContacto.java
-C:\Users\Alvaro\Documents\NetBeansProjects\ds1_2023\API_REST_Project\src\main\java\com\project\resources\ApiAuth.java
-C:\Users\Alvaro\Documents\NetBeansProjects\ds1_2023\API_REST_Project\src\main\java\com\project\resources\JakartaEE10Resource.java
-C:\Users\Alvaro\Documents\NetBeansProjects\ds1_2023\API_REST_Project\src\main\java\com\project\entidades\Rol.java
-C:\Users\Alvaro\Documents\NetBeansProjects\ds1_2023\API_REST_Project\src\main\java\com\project\entidades\UsuarioLogin.java
-C:\Users\Alvaro\Documents\NetBeansProjects\ds1_2023\API_REST_Project\src\main\java\com\project\procesos\Conexion.java
-C:\Users\Alvaro\Documents\NetBeansProjects\ds1_2023\API_REST_Project\src\main\java\com\project\entidades\Contacto.java
-C:\Users\Alvaro\Documents\NetBeansProjects\ds1_2023\API_REST_Project\src\main\java\com\project\resources\ApiContacto.java
+C:\Users\Usuario\Desktop\Desarrollo software l\Programas\TiendaProyecto\src\main\java\com\project\control\crlEmpleados.java
+C:\Users\Usuario\Desktop\Desarrollo software l\Programas\TiendaProyecto\src\main\java\com\project\resources\ApiArticulos.java
+C:\Users\Usuario\Desktop\Desarrollo software l\Programas\TiendaProyecto\src\main\java\com\project\entidades\ExistenciasProductos.java
+C:\Users\Usuario\Desktop\Desarrollo software l\Programas\TiendaProyecto\src\main\java\com\project\procesos\daoClientes.java
+C:\Users\Usuario\Desktop\Desarrollo software l\Programas\TiendaProyecto\src\main\java\com\project\control\crlIngresos.java
+C:\Users\Usuario\Desktop\Desarrollo software l\Programas\TiendaProyecto\src\main\java\com\project\control\crlVentas.java
+C:\Users\Usuario\Desktop\Desarrollo software l\Programas\TiendaProyecto\src\main\java\com\project\entidades\Rol.java
+C:\Users\Usuario\Desktop\Desarrollo software l\Programas\TiendaProyecto\src\main\java\com\project\resources\ApiEmpleados.java
+C:\Users\Usuario\Desktop\Desarrollo software l\Programas\TiendaProyecto\src\main\java\com\project\control\crlArticulos.java
+C:\Users\Usuario\Desktop\Desarrollo software l\Programas\TiendaProyecto\src\main\java\com\project\procesos\daoEnvios.java
+C:\Users\Usuario\Desktop\Desarrollo software l\Programas\TiendaProyecto\src\main\java\com\project\resources\ApiExistencias.java
+C:\Users\Usuario\Desktop\Desarrollo software l\Programas\TiendaProyecto\src\main\java\com\project\procesos\daoCarrito.java
+C:\Users\Usuario\Desktop\Desarrollo software l\Programas\TiendaProyecto\src\main\java\com\project\resources\ApiDirecciones.java
+C:\Users\Usuario\Desktop\Desarrollo software l\Programas\TiendaProyecto\src\main\java\com\project\resources\ApiCarrito.java
+C:\Users\Usuario\Desktop\Desarrollo software l\Programas\TiendaProyecto\src\main\java\com\project\resources\ApiVentas.java
+C:\Users\Usuario\Desktop\Desarrollo software l\Programas\TiendaProyecto\src\main\java\com\project\procesos\daoExistencias.java
+C:\Users\Usuario\Desktop\Desarrollo software l\Programas\TiendaProyecto\src\main\java\com\project\control\crlReservas.java
+C:\Users\Usuario\Desktop\Desarrollo software l\Programas\TiendaProyecto\src\main\java\com\project\entidades\Empleados.java
+C:\Users\Usuario\Desktop\Desarrollo software l\Programas\TiendaProyecto\src\main\java\com\project\control\crlExistencias.java
+C:\Users\Usuario\Desktop\Desarrollo software l\Programas\TiendaProyecto\src\main\java\com\project\procesos\daoVentas.java
+C:\Users\Usuario\Desktop\Desarrollo software l\Programas\TiendaProyecto\src\main\java\com\project\procesos\daoEmpleados.java
+C:\Users\Usuario\Desktop\Desarrollo software l\Programas\TiendaProyecto\src\main\java\com\project\JakartaRestConfiguration.java
+C:\Users\Usuario\Desktop\Desarrollo software l\Programas\TiendaProyecto\src\main\java\com\project\control\crlCategorias.java
+C:\Users\Usuario\Desktop\Desarrollo software l\Programas\TiendaProyecto\src\main\java\com\project\procesos\daoIngresos.java
+C:\Users\Usuario\Desktop\Desarrollo software l\Programas\TiendaProyecto\src\main\java\com\project\entidades\Reservas.java
+C:\Users\Usuario\Desktop\Desarrollo software l\Programas\TiendaProyecto\src\main\java\com\project\entidades\Categorias.java
+C:\Users\Usuario\Desktop\Desarrollo software l\Programas\TiendaProyecto\src\main\java\com\project\resources\ApiReservas.java
+C:\Users\Usuario\Desktop\Desarrollo software l\Programas\TiendaProyecto\src\main\java\com\project\entidades\Ventas.java
+C:\Users\Usuario\Desktop\Desarrollo software l\Programas\TiendaProyecto\src\main\java\com\project\procesos\daoArticulos.java
+C:\Users\Usuario\Desktop\Desarrollo software l\Programas\TiendaProyecto\src\main\java\com\project\utilerias\AuthenticationFilter.java
+C:\Users\Usuario\Desktop\Desarrollo software l\Programas\TiendaProyecto\src\main\java\com\project\resources\ApiIngresos.java
+C:\Users\Usuario\Desktop\Desarrollo software l\Programas\TiendaProyecto\src\main\java\com\project\utilerias\Hash.java
+C:\Users\Usuario\Desktop\Desarrollo software l\Programas\TiendaProyecto\src\main\java\com\project\procesos\Conexion.java
+C:\Users\Usuario\Desktop\Desarrollo software l\Programas\TiendaProyecto\src\main\java\com\project\procesos\daoProveedores.java
+C:\Users\Usuario\Desktop\Desarrollo software l\Programas\TiendaProyecto\src\main\java\com\project\resources\ApiSubcategorias.java
+C:\Users\Usuario\Desktop\Desarrollo software l\Programas\TiendaProyecto\src\main\java\com\project\entidades\Subcategorias.java
+C:\Users\Usuario\Desktop\Desarrollo software l\Programas\TiendaProyecto\src\main\java\com\project\utilerias\JSONWebToken.java
+C:\Users\Usuario\Desktop\Desarrollo software l\Programas\TiendaProyecto\src\main\java\com\project\resources\ApiCategorias.java
+C:\Users\Usuario\Desktop\Desarrollo software l\Programas\TiendaProyecto\src\main\java\com\project\procesos\daoReservas.java
+C:\Users\Usuario\Desktop\Desarrollo software l\Programas\TiendaProyecto\src\main\java\com\project\entidades\Proveedores.java
+C:\Users\Usuario\Desktop\Desarrollo software l\Programas\TiendaProyecto\src\main\java\com\project\resources\ApiProveedores.java
+C:\Users\Usuario\Desktop\Desarrollo software l\Programas\TiendaProyecto\src\main\java\com\project\entidades\Articulos.java
+C:\Users\Usuario\Desktop\Desarrollo software l\Programas\TiendaProyecto\src\main\java\com\project\control\crlCarrito.java
+C:\Users\Usuario\Desktop\Desarrollo software l\Programas\TiendaProyecto\src\main\java\com\project\resources\ApiEnvios.java
+C:\Users\Usuario\Desktop\Desarrollo software l\Programas\TiendaProyecto\src\main\java\com\project\procesos\daoUsuario.java
+C:\Users\Usuario\Desktop\Desarrollo software l\Programas\TiendaProyecto\src\main\java\com\project\control\crlEnvios.java
+C:\Users\Usuario\Desktop\Desarrollo software l\Programas\TiendaProyecto\src\main\java\com\project\resources\ApiAuth.java
+C:\Users\Usuario\Desktop\Desarrollo software l\Programas\TiendaProyecto\src\main\java\com\project\resources\JakartaEE10Resource.java
+C:\Users\Usuario\Desktop\Desarrollo software l\Programas\TiendaProyecto\src\main\java\com\project\entidades\Ingresos.java
+C:\Users\Usuario\Desktop\Desarrollo software l\Programas\TiendaProyecto\src\main\java\com\project\control\crlClientes.java
+C:\Users\Usuario\Desktop\Desarrollo software l\Programas\TiendaProyecto\src\main\java\com\project\entidades\Direcciones.java
+C:\Users\Usuario\Desktop\Desarrollo software l\Programas\TiendaProyecto\src\main\java\com\project\control\crlUsuario.java
+C:\Users\Usuario\Desktop\Desarrollo software l\Programas\TiendaProyecto\src\main\java\com\project\entidades\Usuario.java
+C:\Users\Usuario\Desktop\Desarrollo software l\Programas\TiendaProyecto\src\main\java\com\project\control\crlSubcategorias.java
+C:\Users\Usuario\Desktop\Desarrollo software l\Programas\TiendaProyecto\src\main\java\com\project\utilerias\Secured.java
+C:\Users\Usuario\Desktop\Desarrollo software l\Programas\TiendaProyecto\src\main\java\com\project\procesos\daoDirecciones.java
+C:\Users\Usuario\Desktop\Desarrollo software l\Programas\TiendaProyecto\src\main\java\com\project\resources\ApiClientes.java
+C:\Users\Usuario\Desktop\Desarrollo software l\Programas\TiendaProyecto\src\main\java\com\project\entidades\Envios.java
+C:\Users\Usuario\Desktop\Desarrollo software l\Programas\TiendaProyecto\src\main\java\com\project\procesos\daoCategorias.java
+C:\Users\Usuario\Desktop\Desarrollo software l\Programas\TiendaProyecto\src\main\java\com\project\entidades\Clientes.java
+C:\Users\Usuario\Desktop\Desarrollo software l\Programas\TiendaProyecto\src\main\java\com\project\entidades\Carrito.java
+C:\Users\Usuario\Desktop\Desarrollo software l\Programas\TiendaProyecto\src\main\java\com\project\control\crlDirecciones.java
+C:\Users\Usuario\Desktop\Desarrollo software l\Programas\TiendaProyecto\src\main\java\com\project\control\crlProveedores.java
+C:\Users\Usuario\Desktop\Desarrollo software l\Programas\TiendaProyecto\src\main\java\com\project\procesos\daoSubcategorias.java

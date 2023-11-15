@@ -1,15 +1,15 @@
 package com.project.entidades;
 
 public class Proveedores {
-    private int ID_Proveerdor;
+    private int ID_Proveedor;
     private String nombre;
     private String direccion;
     private String telefono;
     private String correo;
     private String notas;
 
-    public Proveedores(int ID_Proveerdor, String nombre, String direccion, String telefono, String correo, String notas) {
-        this.ID_Proveerdor = ID_Proveerdor;
+    public Proveedores(int ID_Proveedor, String nombre, String direccion, String telefono, String correo, String notas) {
+        this.ID_Proveedor = ID_Proveedor;
         this.nombre = nombre;
         this.direccion = direccion;
         this.telefono = telefono;
@@ -17,12 +17,12 @@ public class Proveedores {
         this.notas = notas;
     }
 
-    public int getID_Proveerdor() {
-        return ID_Proveerdor;
+    public int getID_Proveedor() {
+        return ID_Proveedor;
     }
 
-    public void setID_Proveerdor(int ID_Proveerdor) {
-        this.ID_Proveerdor = ID_Proveerdor;
+    public void setID_Proveedor(int ID_Proveedor) {
+        this.ID_Proveedor = ID_Proveedor;
     }
 
     public String getNombre() {

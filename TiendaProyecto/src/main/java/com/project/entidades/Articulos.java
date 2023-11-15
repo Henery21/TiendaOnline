@@ -23,7 +23,7 @@ public class Articulos {
         this.estado = estado;
         this.ID_Proveedor = ID_Proveedor;
     }
-    
+
     public int getID_Articulo() {
         return ID_Articulo;
     }
@@ -75,11 +75,11 @@ public class Articulos {
     public String getDescripcion() {
         return descripcion;
     }
-    
+
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
-    
+
     public int getEstado() {
         return estado;
     }
@@ -87,13 +87,13 @@ public class Articulos {
     public void setEstado(int estado) {
         this.estado = estado;
     }
-    
+
     public int getID_Proveedor() {
         return ID_Proveedor;
     }
 
     public void setID_Proveedor(int ID_Proveedor) {
         this.ID_Proveedor = ID_Proveedor;
-    }
+    }   
 
 }

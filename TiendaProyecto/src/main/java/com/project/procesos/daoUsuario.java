@@ -10,7 +10,7 @@ public class daoUsuario {
         try {
             Conexion conexion = new Conexion();
             Connection con = conexion.Conectar();
-            String sql = "select usuario,nombres,apellidos,idrol from usuario"
+            String sql = "select ID_Usuario,usuario,clave,ID_Rol from Usuarios"
                     + " where usuario = ? and clave = ?";
             PreparedStatement pst = con.prepareStatement(sql);
             pst.setString(1, usuario);
