@@ -15,7 +15,7 @@ import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.core.Response.Status;
 import java.util.ArrayList;
 
-@Path("Articulos")
+@Path("Reservas")
 public class ApiReservas {
     @GET
     @Path("consultar")
@@ -63,7 +63,7 @@ public class ApiReservas {
     @DELETE
     @Path("eliminar/{id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response eliminarReservas(@PathParam("id") Reservas id){
+    public Response eliminarReservas(@PathParam("id") int id){
         daoReservas c = new daoReservas();
         int res = c.eliminarReservas(id);
         if (res > 0)

@@ -1,29 +1,22 @@
 package com.project.control;
 
+import com.project.entidades.Empleados;
+import com.project.procesos.daoEmpleados;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
 
 public class crlEmpleados extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet crlEmpleados</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet crlEmpleados at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        }
+        daoEmpleados dao = new daoEmpleados();
+        ArrayList<Empleados> listaEmpleados = dao.consultarEmpleados(LEGACY_DO_HEAD);
+        request.getRequestDispatcher("MostrarEmpleados.jsp").forward(request, response);
     }
 
     @Override

@@ -58,13 +58,13 @@ public class daoSubcategorias {
         } catch (SQLException e) {
             return -1;
         }
-    } public int eliminarSubcategorias(Subcategorias subcategorias){
+    } public int eliminarSubcategorias(int id){
     try {
             Conexion conexion = new Conexion();
             Connection con =  conexion.Conectar();
             String sql = "delete from Subcategorias where ID_Subcategoria=?";
             PreparedStatement ps =  con.prepareStatement(sql);
-            ps.setInt(1,subcategorias.getID_Subcategoria());
+            ps.setInt(1,id);
             int res = ps.executeUpdate();
             ps.close();
             conexion.desconectar();

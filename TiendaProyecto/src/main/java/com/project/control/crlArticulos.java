@@ -1,29 +1,22 @@
 package com.project.control;
 
+import com.project.entidades.Articulos;
+import com.project.procesos.daoArticulos;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
 
 public class crlArticulos extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet crlArticulos</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet crlArticulos at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        }
+        daoArticulos dao = new daoArticulos();
+        ArrayList<Articulos> listaArticulos = dao.consultarArticulos(LEGACY_DO_HEAD);
+        request.getRequestDispatcher("MostrarArticulos.jsp").forward(request, response);
     }
 
     @Override

@@ -62,13 +62,13 @@ public class daoDirecciones {
         } catch (SQLException e) {
             return -1;
         }
-    } public int eliminarDirecciones(Direcciones direcciones){
+    } public int eliminarDirecciones(int id){
     try {
             Conexion conexion = new Conexion();
             Connection con =  conexion.Conectar();
             String sql = "delete from Direcciones where ID_Direccion=?";
             PreparedStatement ps =  con.prepareStatement(sql);
-            ps.setInt(1,direcciones.getID_Direccion());
+            ps.setInt(1,id);
             int res = ps.executeUpdate();
             ps.close();
             conexion.desconectar();

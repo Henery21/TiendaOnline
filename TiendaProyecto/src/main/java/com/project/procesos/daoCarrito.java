@@ -64,20 +64,20 @@ public class daoCarrito {
         } catch (SQLException e) {
             return -1;
         }
-    } public int eliminarCarrito(Carrito carrito){
+    } public int eliminarCarrito(int id) {
     try {
-            Conexion conexion = new Conexion();
-            Connection con =  conexion.Conectar();
-            String sql = "delete from CarritoCompras where ID_Carrito=?";
-            PreparedStatement ps =  con.prepareStatement(sql);
-            ps.setInt(1,carrito.getID_Carrito());
-            int res = ps.executeUpdate();
-            ps.close();
-            conexion.desconectar();
-            return res;
-        } catch (SQLException e) {
-            return -1;
-        }
-
+        Conexion conexion = new Conexion();
+        Connection con = conexion.Conectar();
+        String sql = "delete from CarritoCompras where ID_Carrito=?";
+        PreparedStatement ps = con.prepareStatement(sql);
+        ps.setInt(1, id);  // Utiliza directamente el parámetro id
+        int res = ps.executeUpdate();
+        ps.close();
+        conexion.desconectar();
+        return res;
+    } catch (SQLException e) {
+        return -1;
     }
+}
+
 }

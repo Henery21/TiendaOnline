@@ -66,13 +66,13 @@ public class daoEnvios {
         } catch (SQLException e) {
             return -1;
         }
-    } public int eliminarEnvios(Envios envios){
+    } public int eliminarEnvios(int id){
     try {
             Conexion conexion = new Conexion();
             Connection con =  conexion.Conectar();
             String sql = "delete from Envios where ID_Envios=?";
             PreparedStatement ps =  con.prepareStatement(sql);
-            ps.setInt(1,envios.getID_Envio());
+            ps.setInt(1,id);
             int res = ps.executeUpdate();
             ps.close();
             conexion.desconectar();

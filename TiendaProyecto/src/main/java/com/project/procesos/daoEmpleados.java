@@ -73,13 +73,13 @@ public class daoEmpleados {
         } catch (SQLException e) {
             return -1;
         }
-    } public int eliminarEmpleados(Empleados Empleado) {
+    } public int eliminarEmpleados(int id) {
     try {
         Conexion conexion = new Conexion();
         Connection con = conexion.Conectar();
         String sql = "delete from Empleados where ID_Empleado=?";
         PreparedStatement ps = con.prepareStatement(sql);
-        ps.setInt(1, Empleado.getID_Empleado());
+        ps.setInt(1, id);
         int res = ps.executeUpdate();
         ps.close();
         conexion.desconectar();

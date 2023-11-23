@@ -69,13 +69,13 @@ public class daoClientes {
         } catch (SQLException e) {
             return -1;
         }
-    } public int eliminarClientes(Clientes clientes){
+    } public int eliminarClientes(int id){
     try {
             Conexion conexion = new Conexion();
             Connection con =  conexion.Conectar();
             String sql = "delete from Clientes where ID_Cliente=?";
             PreparedStatement ps =  con.prepareStatement(sql);
-            ps.setInt(1,clientes.getID_Cliente());
+            ps.setInt(1,id);
             int res = ps.executeUpdate();
             ps.close();
             conexion.desconectar();

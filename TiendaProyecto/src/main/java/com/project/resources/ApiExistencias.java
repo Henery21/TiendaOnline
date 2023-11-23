@@ -63,7 +63,7 @@ public class ApiExistencias {
     @DELETE
     @Path("eliminar/{id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response eliminarExistencias(@PathParam("id") ExistenciasProductos id){
+    public Response eliminarExistencias(@PathParam("id") int id){
         daoExistencias c = new daoExistencias();
         int res = c.eliminarExistencias(id);
         if (res > 0)

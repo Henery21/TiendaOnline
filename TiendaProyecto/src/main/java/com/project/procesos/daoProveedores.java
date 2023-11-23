@@ -64,13 +64,13 @@ public class daoProveedores {
         } catch (SQLException e) {
             return -1;
         }
-    } public int eliminarProveedores(Proveedores proveedores){
+    } public int eliminarProveedores(int id){
     try {
             Conexion conexion = new Conexion();
             Connection con =  conexion.Conectar();
             String sql = "delete from Proveedores where ID_Proveedor=?";
             PreparedStatement ps =  con.prepareStatement(sql);
-            ps.setInt(1,proveedores.getID_Proveedor());
+            ps.setInt(1,id);
             int res = ps.executeUpdate();
             ps.close();
             conexion.desconectar();

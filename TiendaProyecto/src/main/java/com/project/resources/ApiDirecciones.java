@@ -64,7 +64,7 @@ public class ApiDirecciones {
     @DELETE
     @Path("eliminar/{id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response eliminarDirecciones(@PathParam("id") Direcciones id){
+    public Response eliminarDirecciones(@PathParam("id") int id){
         daoDirecciones c = new daoDirecciones();
         int res = c.eliminarDirecciones(id);
         if (res > 0)

@@ -13,6 +13,7 @@ C:\Users\Usuario\Desktop\Desarrollo software l\Programas\TiendaProyecto\src\main
 C:\Users\Usuario\Desktop\Desarrollo software l\Programas\TiendaProyecto\src\main\java\com\project\resources\ApiDirecciones.java
 C:\Users\Usuario\Desktop\Desarrollo software l\Programas\TiendaProyecto\src\main\java\com\project\resources\ApiCarrito.java
 C:\Users\Usuario\Desktop\Desarrollo software l\Programas\TiendaProyecto\src\main\java\com\project\resources\ApiVentas.java
+C:\Users\Usuario\Desktop\Desarrollo software l\Programas\TiendaProyecto\src\main\java\com\project\control\contUsuario.java
 C:\Users\Usuario\Desktop\Desarrollo software l\Programas\TiendaProyecto\src\main\java\com\project\procesos\daoExistencias.java
 C:\Users\Usuario\Desktop\Desarrollo software l\Programas\TiendaProyecto\src\main\java\com\project\control\crlReservas.java
 C:\Users\Usuario\Desktop\Desarrollo software l\Programas\TiendaProyecto\src\main\java\com\project\entidades\Empleados.java
@@ -49,7 +50,6 @@ C:\Users\Usuario\Desktop\Desarrollo software l\Programas\TiendaProyecto\src\main
 C:\Users\Usuario\Desktop\Desarrollo software l\Programas\TiendaProyecto\src\main\java\com\project\entidades\Ingresos.java
 C:\Users\Usuario\Desktop\Desarrollo software l\Programas\TiendaProyecto\src\main\java\com\project\control\crlClientes.java
 C:\Users\Usuario\Desktop\Desarrollo software l\Programas\TiendaProyecto\src\main\java\com\project\entidades\Direcciones.java
-C:\Users\Usuario\Desktop\Desarrollo software l\Programas\TiendaProyecto\src\main\java\com\project\control\crlUsuario.java
 C:\Users\Usuario\Desktop\Desarrollo software l\Programas\TiendaProyecto\src\main\java\com\project\entidades\Usuario.java
 C:\Users\Usuario\Desktop\Desarrollo software l\Programas\TiendaProyecto\src\main\java\com\project\control\crlSubcategorias.java
 C:\Users\Usuario\Desktop\Desarrollo software l\Programas\TiendaProyecto\src\main\java\com\project\utilerias\Secured.java

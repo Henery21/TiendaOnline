@@ -63,7 +63,7 @@ public class ApiProveedores {
     @DELETE
     @Path("eliminar/{id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response eliminarProveedores(@PathParam("id") Proveedores id){
+    public Response eliminarProveedores(@PathParam("id") int id){
         daoProveedores c = new daoProveedores();
         int res = c.eliminarProveedores(id);
         if (res > 0)

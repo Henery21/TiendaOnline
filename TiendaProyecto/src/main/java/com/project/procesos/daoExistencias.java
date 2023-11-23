@@ -69,13 +69,13 @@ public class daoExistencias {
         } catch (SQLException e) {
             return -1;
         }
-    } public int eliminarExistencias(ExistenciasProductos existenciasProductos){
+    } public int eliminarExistencias(int id){
     try {
             Conexion conexion = new Conexion();
             Connection con =  conexion.Conectar();
             String sql = "delete from ExistenciasProductos where ID_Existencia=?";
             PreparedStatement ps =  con.prepareStatement(sql);
-            ps.setInt(1,existenciasProductos.getID_Existencia());
+            ps.setInt(1,id);
             int res = ps.executeUpdate();
             ps.close();
             conexion.desconectar();

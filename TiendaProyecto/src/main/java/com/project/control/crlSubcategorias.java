@@ -1,29 +1,22 @@
 package com.project.control;
 
+import com.project.entidades.Subcategorias;
+import com.project.procesos.daoSubcategorias;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
 
 public class crlSubcategorias extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet crlSubcategorias</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet crlSubcategorias at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        }
+        daoSubcategorias dSub = new daoSubcategorias();
+        ArrayList<Subcategorias> listaSubcategorias = dSub.consultarSubcategorias(LEGACY_DO_HEAD);
+        request.getRequestDispatcher("MostrarSubcategorias.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

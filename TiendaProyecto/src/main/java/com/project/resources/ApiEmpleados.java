@@ -63,7 +63,7 @@ public class ApiEmpleados {
     @DELETE
     @Path("eliminar/{id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response eliminarEmpleados(@PathParam("id") Empleados id){
+    public Response eliminarEmpleados(@PathParam("id") int id){
         daoEmpleados c = new daoEmpleados();
         int res = c.eliminarEmpleados(id);
         if (res > 0)

@@ -15,7 +15,7 @@ import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.core.Response.Status;
 import java.util.ArrayList;
 
-
+@Path("Subcategorias")
 public class ApiSubcategorias {
     @GET
     @Path("consultar")
@@ -63,7 +63,7 @@ public class ApiSubcategorias {
     @DELETE
     @Path("eliminar/{id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response eliminarSubcategorias(@PathParam("id") Subcategorias id){
+    public Response eliminarSubcategorias(@PathParam("id") int id){
         daoSubcategorias c = new daoSubcategorias();
         int res = c.eliminarSubcategorias(id);
         if (res > 0)

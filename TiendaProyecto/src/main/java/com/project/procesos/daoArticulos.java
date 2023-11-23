@@ -70,13 +70,13 @@ public class daoArticulos {
         } catch (SQLException e) {
             return -1;
         }
-    } public int eliminarArticulos(Articulos articulos){
+    } public int eliminarArticulos(int id){
     try {
             Conexion conexion = new Conexion();
             Connection con =  conexion.Conectar();
             String sql = "delete from Articulos where ID_Articulo=?";
             PreparedStatement ps =  con.prepareStatement(sql);
-            ps.setInt(1,articulos.getID_Articulo());
+            ps.setInt(1,id);
             int res = ps.executeUpdate();
             ps.close();
             conexion.desconectar();

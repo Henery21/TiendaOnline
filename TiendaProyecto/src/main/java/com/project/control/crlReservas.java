@@ -1,29 +1,22 @@
 package com.project.control;
 
+import com.project.entidades.Reservas;
+import com.project.procesos.daoReservas;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
 
 public class crlReservas extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet crlReservas</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet crlReservas at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        }
+        daoReservas dao = new daoReservas();
+        ArrayList<Reservas> listaReservas = dao.consultarReservas(LEGACY_DO_HEAD);
+        request.getRequestDispatcher("MostrarReservas.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

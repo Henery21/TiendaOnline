@@ -1,29 +1,22 @@
 package com.project.control;
 
+import com.project.entidades.Envios;
+import com.project.procesos.daoEnvios;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
 
 public class crlEnvios extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet crlEnvios</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet crlEnvios at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        }
+        daoEnvios dao = new daoEnvios();
+        ArrayList<Envios> listaEnvios = dao.consultarEnvios(LEGACY_DO_HEAD);
+        request.getRequestDispatcher("MostrarEnvios.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

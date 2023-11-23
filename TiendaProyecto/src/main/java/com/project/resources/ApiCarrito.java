@@ -15,7 +15,7 @@ import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.core.Response.Status;
 import java.util.ArrayList;
 
-@Path("Articulos")
+@Path("Carrito")
 public class ApiCarrito {
     @GET
     @Path("consultar")
@@ -63,7 +63,7 @@ public class ApiCarrito {
     @DELETE
     @Path("eliminar/{id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response eliminarCarrito(@PathParam("id") Carrito id){
+    public Response eliminarCarrito(@PathParam("id") int id){
         daoCarrito c = new daoCarrito();
         int res = c.eliminarCarrito(id);
         if (res > 0)

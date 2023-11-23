@@ -64,13 +64,13 @@ public class daoReservas {
         } catch (SQLException e) {
             return -1;
         }
-    } public int eliminarReservas(Reservas reservas){
+    } public int eliminarReservas(int id){
     try {
             Conexion conexion = new Conexion();
             Connection con =  conexion.Conectar();
             String sql = "delete from Reservas where ID_Reserva=?";
             PreparedStatement ps =  con.prepareStatement(sql);
-            ps.setInt(1,reservas.getID_Reserva());
+            ps.setInt(1,id);
             int res = ps.executeUpdate();
             ps.close();
             conexion.desconectar();
