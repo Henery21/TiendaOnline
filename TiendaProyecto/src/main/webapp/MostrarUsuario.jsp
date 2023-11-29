@@ -7,7 +7,7 @@
         <title>Mostrar Articulos</title>
     </head>
     <body>
-        <h1>Lista de Articulos</h1>
+        <h1>Lista de Usuarios</h1>
     <h3>Conexion : ${mensaje_conexion}</h3>
     <table border="1">
         

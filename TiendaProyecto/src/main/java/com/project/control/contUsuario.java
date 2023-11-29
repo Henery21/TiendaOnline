@@ -10,7 +10,6 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 
-@WebServlet("/contUsuario")
 public class contUsuario extends HttpServlet {
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)

@@ -9,7 +9,7 @@ public class daoEmpleados {
         try {
             Conexion conexion = new Conexion();
             Connection con =  conexion.Conectar();
-            String sql = "select ID_Empleado,DUI_Empleado,nombresEmpleado,apellidosEmpleado,ID_Usuario,telefono,correo, direccion,ID_Cargo from Empleados where nombresEmpleados like ? or correo like ?";
+            String sql = "select ID_Empleado,DUI_Empleado,nombresEmpleado,apellidosEmpleado,ID_Usuario,telefono,correo, direccion,ID_Cargo from Empleados where nombresEmpleado like ? or correo like ?";
             PreparedStatement ps =  con.prepareStatement(sql);
             ps.setString(1, "%"+Texto+"%");
             ps.setString(2, "%"+Texto+"%");

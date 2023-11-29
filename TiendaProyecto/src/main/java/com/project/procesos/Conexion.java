@@ -5,9 +5,9 @@ public class Conexion {
     public synchronized Connection Conectar(){
         try{
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-            String url = "jdbc:sqlserver://localhost:1433;dataBaseName=TiendaLacteos;"
+            String url = "jdbc:sqlserver://localhost:1433;databaseName=TiendaLacteos;"
             + "encrypt=true;trustServerCertificate=true";
-            this.conexion = DriverManager.getConnection(url, "admin_user", "root");
+            this.conexion = DriverManager.getConnection(url, "sa", "123456");
             System.out.println("conexion ok");
             return conexion;
         }catch(SQLException  | ClassNotFoundException e ){
