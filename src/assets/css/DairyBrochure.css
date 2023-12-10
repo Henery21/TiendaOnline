@@ -1,0 +1,23 @@
+/* DairyBrochure.css */
+
+.dairy-brochure {
+    background-color: #f8f8f8;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-top: 20px;
+  }
+  
+  .dairy-section {
+    margin-top: 20px;
+  }
+  
+  .dairy-section h3 {
+    color: #007bff;
+  }
+  
+  .dairy-section p {
+    margin-top: 10px;
+    color: #333;
+  }
+  
